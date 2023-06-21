@@ -529,7 +529,7 @@ hdfs dfs -put <source file path> /input
 Find the path to the hadoop-mapreduce-examples-3.3.5,jar on the ./share/hadoop/mapreduce folder for example : C:\hadoop\share\hadoop\mapreduce\hadoop-mapreduce-examples-3.3.5.jar 
 
 ```
-hadoop jar <hadoop-mapreduce-examples-3.3.5.jar path> word count <hadoop input path> <output hadoop folder path>
+hadoop jar <hadoop-mapreduce-examples-3.3.5.jar path> wordcount <hadoop input path> <output hadoop folder path>
 ```
 for example :
 ```
