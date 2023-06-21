@@ -529,7 +529,7 @@ Find the path to the hadoop-mapreduce-examples-3.3.5,jar on the ./share/hadoop/m
 ```
 hadoop jar <hadoop-mapreduce-examples-3.3.5.jar path> word count <hadoop input path> <output hadoop folder path>
 ```
-# for example :
+for example :
 ```
 hadoop jar C:\hadoop\share\hadoop\mapreduce\hadoop-mapreduce-examples-3.3.5.jar  wordcount /input/test.txt /output/test
 ```
@@ -543,7 +543,7 @@ Change the XMX line on the mapred-site.xml
 hdfs dfs -get <output hadoop part-r-00000 path> <local path>
 ```
 
-# for example
+for example
 ```
 hdfs dfs -get /output/test/part-r-00000 C:\Downloads\test.txt
 
