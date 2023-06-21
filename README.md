@@ -422,7 +422,9 @@ Check localhost:8088 for the job and application status. Check localhost:9870 fo
 
 ## Windows Installation
 
-Reference : https://youtu.be/knAS0w-jiUk
+References : 
+https://youtu.be/knAS0w-jiUk
+https://youtu.be/7O56u3LyPTY
 
 
 - Install Java 8
