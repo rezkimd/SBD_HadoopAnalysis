@@ -418,3 +418,133 @@ hadoop fs -cat /output/part-r-00000
 ```
 
 Check localhost:8088 for the job and application status. Check localhost:9870 for the file system status.
+
+
+## Windows Installation
+
+Reference : https://youtu.be/knAS0w-jiUk
+
+
+- Install Java 8
+```
+https://www.oracle.com/java/technologies/downloads/#java8-windows
+```
+
+- Download & Extract Hadoop 3.3.5
+```
+https://hadoop.apache.org/
+Download the binary one
+```
+
+- Add to Environment Variable
+```
+JAVA_HOME -> Java installation Path (jdk... path)
+HADOOP_HOME -> Hadoop Extracted Bin Path
+```
+
+- Add to System Path Environment Variable
+```
+C:\Java\jdk....\bin
+C:\hadoop\bin
+C:\hadoop\sbin
+```
+
+- Check Installation
+```
+java -version
+hadoop -version
+```
+
+- Configuring Hadoop
+
+
+1. Go to "./etc/hadoop" and find "hadoop.env"
+2. change the JAVA_HOME to your JAVA_HOME path 
+3. Go back to hadoop folder and create a new folder called "data"
+4. inside the data folder create 2 folder called "namenode" and "datanode"
+5. now go back to "./etc/hadoop" and follow the hadoop_install_config.txt on Fix folder from this github
+
+- Fixing Namenode Shutdown Problem
+
+1. Copy the Fix folder from this github
+2. delete the bin folder on the hadoop installation
+3. copy the bin from this fix folder
+4. Download the file below :
+```
+https://www.dll-files.com/msvcr120.dll.html
+```
+5. Copy the msvcr120.dll to "C:\Windows\System32"
+6. Install msvc-170 from this link:
+```
+https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msvc-170
+```
+
+
+- Formatting Namenode (Administrator CMD)
+```
+hdfs namenode -format
+```
+
+- Launching Hadoop
+
+```
+cd hadoop
+start-dfs.cmd
+start-yarn.cmd
+```
+
+- Check hadoop status
+```
+jps
+```
+
+- Check hadoop web interface
+```
+http://localhost:8088
+```
+
+- Check hdfs web interface
+```
+http://localhost:9870
+```
+
+## Word Count example on Windows
+
+Always on Administrator CMD
+
+- Create input folder in the hadoop file system
+```
+hdfs dfs -mkdir /input
+```
+
+- Put the file to the hadoop file system
+```
+hdfs dfs -put <source file path> /input
+```
+
+- Running word count
+
+Find the path to the hadoop-mapreduce-examples-3.3.5,jar on the ./share/hadoop/mapreduce folder for example : C:\hadoop\share\hadoop\mapreduce\hadoop-mapreduce-examples-3.3.5.jar 
+
+```
+hadoop jar <hadoop-mapreduce-examples-3.3.5.jar path> word count <hadoop input path> <output hadoop folder path>
+```
+for example :
+```
+hadoop jar C:\hadoop\share\hadoop\mapreduce\hadoop-mapreduce-examples-3.3.5.jar  wordcount /input/test.txt /output/test
+```
+- Java heap error
+```
+Change the XMX line on the mapred-site.xml
+```
+
+- Getting the output to local
+```
+hdfs dfs -get <output hadoop part-r-00000 path> <local path>
+```
+
+for example
+```
+hdfs dfs -get /output/test/part-r-00000 C:\Downloads\test.txt
+
+```
