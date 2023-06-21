@@ -487,10 +487,10 @@ https://learn.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=ms
 hdfs namenode -format
 ```
 
-- Launching Hadoop
+- Launching Hadoop (go to hadoop sbin folder)
 
 ```
-cd hadoop
+cd hadoop/sbin
 start-dfs.cmd
 start-yarn.cmd
 ```
