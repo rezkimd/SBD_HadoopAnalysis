@@ -462,44 +462,7 @@ hadoop -version
 2. change the JAVA_HOME to your JAVA_HOME path 
 3. Go back to hadoop folder and create a new folder called "data"
 4. inside the data folder create 2 folder called "namenode" and "datanode"
-5. now go back to "./etc/hadoop" and change the file below:
-# For core-site.xml
-<property>
-  <name>fs.defaultFS</name>
-  <value>hdfs://localhost:9000</value>
-</property>
-
-# For hdfs-site.xml or https-site.xml
-<property>
-  <name>dfs.replication</name>
-  <value>1</value>
-</property><property>
-  <name>dfs.namenode.name.dir</name>
-  <value>C:\hadoop\data\namenode</value>
-</property><property>
-  <name>dfs.datanode.data.dir</name>
-  <value>C:\hadoop\data\datanode</value>
-</property>
-
-# For mapred-site.xml
-<property>
-  <name>mapreduce.framework.name</name>
-  <value>yarn</value>
-</property>
-<property>
-	<name>mapreduce.map.java.opts</name>
-	<value>-Xmx6144m</value>  -> Max RAM USAGE
-</property>
-
-# For yarn-site.xml
-<property>
-  <name>yarn.nodemanager.aux-services</name>
-  <value>mapreduce_shuffle</value>
-</property><property>
-  <name>yarn.nodemanager.auxservices.mapreduce.shuffle.class</name>
-  <value>org.apache.hadoop.mapred.ShuffleHandler</value>
-</property>
-
+5. now go back to "./etc/hadoop" and follow the hadoop_install_config.txt on Fix folder from this github
 
 - Fixing Namenode Shutdown Problem
 

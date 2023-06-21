@@ -21,6 +21,10 @@
   <name>mapreduce.framework.name</name>
   <value>yarn</value>
 </property>
+<property>
+	<name>mapreduce.map.java.opts</name>
+	<value>-Xmx6144m</value>  -> Max RAM USAGE
+</property>
 
 # For yarn-site.xml
 <property>
